@@ -1,0 +1,491 @@
+---
+---
+@charset "utf-8";
+
+$base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$liberi-font: "Bauhaus-93", "Roboto", "Helvetica Neue";
+$base-font-size:   16px;
+$bigger-font-size: 18px;
+$brand-font-size: 16rem;
+$brand-line-height: $brand-font-size * 0.8;
+$sub-brand-font-size: 4rem;
+$sub-brand-line-height: $sub-brand-font-size * 0.8;
+$small-brand-font-size: 7rem;
+$small-brand-line-height: $small-brand-font-size * 0.8;
+$small-sub-brand-font-size: 2rem;
+$small-sub-brand-line-height: $small-sub-brand-font-size * 0.8;
+
+$small-font-size:  $base-font-size * 0.875;
+$base-font-weight: 400;
+$base-line-height: 1;
+
+$base-radius:      .3rem;
+
+$blue-color:       #2d519a;
+$light-blue-color: #0084cd;
+$green-color:      #00ff00;
+$red-color:        #c90000;
+$black-color:      #000;
+$white-color:      #fff;
+$white-color-dark: darken($white-color, 20%);
+$grey-color:       #222;
+$grey-color-light: lighten($grey-color, 20%);
+$grey-color-dark:  darken($grey-color, 20%);
+
+$primary-color:    #5cae40;
+
+$primary-color-light: lighten($primary-color, 5%);
+$primary-color-dark: darken($primary-color, 10%);
+
+$secondary-color:  $primary-color-light;
+$tertiary-color:   #fa625f;
+
+$facebook-blue-color: #3b5998;
+$instagram-color:  #bd3381;
+
+$text-primary-color: #600473;
+$text-light-color: $white-color;
+$text-color:       $grey-color-dark;
+
+$nav-color: $primary-color;
+$footer-color: $primary-color;
+
+$content-width:    900px;
+
+$on-cellphone:     543px;
+$on-tablet:        767px;
+$on-pc:            991px;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+@font-face {
+  font-family: 'Bauhaus-93';
+  src: url('../webfonts/bauhaus-93.ttf') format('truetype');
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+p {
+  line-height: 1.7em;
+  color: $text-color;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: $text-primary-color;
+  font-weight: 400;
+}
+
+.facebook-blue-color {
+  color: $facebook-blue-color;
+}
+
+.instagram-color {
+  color: $instagram-color;
+}
+
+.blue-color {
+  color: $blue-color;
+}
+
+.light-blue-color {
+  color: $light-blue-color;
+}
+
+.green-color {
+  color: $green-color;
+}
+
+.red-color {
+  color: $red-color;
+}
+
+.liberi-font {
+  font-family: $liberi-font;
+}
+
+nav {
+  background-color: $nav-color;
+  padding: .2em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 4;
+  border-bottom: none;
+  line-height: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .right-side {
+    padding-right: .5rem;
+  }
+
+  .pure-button-primary {
+    color: $primary-color;
+    background-color: $white-color;
+  }
+
+  .pure-menu-list {
+    color: $white-color;
+
+    .pure-menu-item {
+      border-radius: $base-radius;
+
+      .pure-menu-link {
+        color: $white-color;
+        font-size: $bigger-font-size;
+      }
+
+      .pure-menu-link:hover,
+      .pure-menu-link:focus {
+        background: none;
+        border: none;
+        color: inherit;
+        transition: color .7s;
+      }
+    }
+
+    .pure-menu-item:hover,
+    .pure-menu-item:focus {
+      background-color: $primary-color-light;
+      transition: background-color .7s;
+    }
+  }
+
+  .logo-sm {
+    height: 2rem;
+  }
+
+  .open-menu {
+    display: none;
+  }
+
+  &.sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding: 0;
+      text-align:center;
+      justify-content: center;
+
+      .pure-menu-item {
+        margin: 0.5rem 0;
+      }
+
+  }
+}
+
+a,
+a:visited {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $primary-color-light;
+  transition: color .7s;
+}
+
+.site-img {
+    border-radius: $base-radius;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.animation-hidden {
+  opacity: 0;
+}
+
+.animation-visible {
+  opacity: 1;
+}
+
+.subpage {
+  max-width: $content-width;
+  margin: 1rem auto;
+  margin-bottom: 3rem;
+}
+
+.l-box {
+  padding: 1em;
+}
+
+.l-box-lrg {
+  padding: 2em;
+}
+
+.h-center {
+  text-align: center;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.all-height {
+  min-height: 100%;
+}
+
+.pure-form {
+  label {
+    margin: 1em 0 0;
+    font-weight: bold;
+  }
+
+  input[type],
+  textarea {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    font-size: 100%;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+.pure-button {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 0.5em 2em;
+  border-radius: $base-radius;
+}
+
+.pure-menu-fixed {
+  z-index: 5;
+}
+
+.header {
+  background-image: url("../images/pattern.png");
+  background-repeat: repeat;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  position: fixed ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+
+  .header-title {
+    color: $black-color;
+    font-size: $sub-brand-font-size;
+    font-weight: 700;
+    line-height: $base-line-height;
+    background-color: $white-color;
+    padding: 1rem;
+    white-space: nowrap;
+
+    .liberi-font {
+      font-weight: 400;
+    }
+  }
+}
+
+.header-half {
+  @extend .header;
+
+  min-height: 50%;
+  padding: 0rem 2rem;
+  margin-top: 1rem;
+}
+
+.header-full {
+  @extend .header;
+  min-height: 100%;
+
+  .white-block {
+    min-width: 100%;
+    background-color: $white-color;
+    padding: 1rem 0rem;
+  }
+
+  .brand {
+    font-size: $brand-font-size;
+    line-height: $brand-line-height;;
+    color: black;
+  }
+
+  .subbrand {
+    font-size: $sub-brand-font-size;
+    line-height: $sub-brand-line-height;
+    color: black;
+  }
+
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
+  background: $white-color;
+}
+
+.content-wrapper-subpages {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  min-height: 12%;
+  z-index: 2;
+  background: $white-color;
+}
+
+.content {
+  padding: 1em;
+}
+
+.content-head {
+  font-weight: $base-font-weight;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.content-subhead {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 1em 0;
+
+  i {
+    margin-right: .5rem;
+  }
+}
+
+.ribbon {
+  background: $secondary-color;
+  color: $white-color;
+
+  .content {
+    max-width: $content-width * 0.9;
+    margin: auto;
+  }
+
+  .content-subhead {
+    color: $white-color;
+  }
+}
+
+
+
+.news-post {
+  margin: 2rem 0;
+
+  .source {
+    font-size: $small-font-size;
+    color: $grey-color;
+  }
+  .video-2 {
+    padding: 0 1rem;
+  }
+}
+
+.footer {
+  background: $footer-color;
+  color: $text-light-color;
+}
+
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.embed-responsive.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.hidden-sm {
+  display: inline-block;
+}
+
+@media only screen and (max-width : $on-tablet) {
+  .v-center {
+    display: block;
+  }
+
+  .hidden-sm {
+    display: none;
+  }
+
+  nav {
+    .open-menu {
+      display: block;
+    }
+  }
+
+  .header-full {
+    .brand {
+      font-size: $small-brand-font-size;
+      line-height: $small-brand-line-height;
+    }
+    .subbrand {
+      font-size: $small-sub-brand-font-size;
+      line-height: $small-sub-brand-line-height;
+    }
+  }
+
+  .header-half {
+    .header-title {
+      font-size: $small-sub-brand-font-size;
+    }
+  }
+}
+
+@media only screen and (max-width : $on-cellphone) {
+  .content {
+    padding: 0;
+  }
+}
