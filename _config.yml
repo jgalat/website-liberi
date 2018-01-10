@@ -16,7 +16,7 @@
 title: Liberi
 description: > # no desc
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://liberi.cafar.com.ar" # the base hostname & protocol for your site
+url: "https://liberi.cafar.com.ar" # the base hostname & protocol for your site
 
 fbpage: "https://www.facebook.com/liberi.cafar"
 instagrampage: "https://www.instagram.com/liberi.cafar"
