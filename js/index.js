@@ -1,28 +1,7 @@
 $(function () {
 
   var nav = $('nav'),
-      menuLinks = nav.find('.navigation-links').find('.pure-menu-link'),
-      navOuterHeight = nav.outerHeight();
-
-  var animateScroll = function (hash) {
-    var offsetTop = 0;
-
-    if (hash !== "#") {
-      var $hash = $(hash);
-      if ($hash.length > 0) {
-        offsetTop = $hash.offset().top - navOuterHeight;
-      }
-    }
-
-    $('html, body')
-      .stop()
-      .animate({ scrollTop: offsetTop }, 500);
-  };
-
-  /* scroll to the top */
-  window.scrollTo(0, 0);
-  /* animate scroll */
-  animateScroll(window.location.hash);
+      menuLinks = nav.find('.navigation-links').find('.pure-menu-link');
 
   menuLinks.click(function (evnt) {
     var regex = new RegExp("(#[a-z\-]*)", "gi"),
@@ -31,7 +10,7 @@ $(function () {
     if (href) {
       evnt.preventDefault();
       toggleSideNav(false);
-      animateScroll(href);
+      $.animateScroll(href);
     }
   });
 

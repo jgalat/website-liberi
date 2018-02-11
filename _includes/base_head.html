@@ -9,7 +9,7 @@
 <meta name="msapplication-navbutton-color" content="#5cae40">
 <!-- iOS Safari -->
 <meta name="apple-mobile-web-app-status-bar-style" content="#5cae40">
-<title>{{ site.title }}</title>
+<title>{{ site.title }}{% if page.title != null %} | {{ page.title }}{% endif %}</title>
 <link rel="shortcut icon" type="image/png" href="{{ site.url }}{{ site.baseurl }}/favicon.png">
 <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/pure-min.css" media="screen">
 <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/css/grids-responsive-min.css" media="screen">
@@ -19,4 +19,6 @@
 
 <script src="{{ site.url }}{{ site.baseurl }}/js/jquery-3.1.0.min.js" charset="utf-8"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/js/jquery.viewportchecker.min.js" charset="utf-8"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/jquery.extend.js" charset="utf-8"></script>
+<script src="{{ site.url }}{{ site.baseurl }}/js/init.js" charset="utf-8"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/js/menu.js"></script>

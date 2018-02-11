@@ -6,6 +6,7 @@ $base-font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $liberi-font: "Bauhaus-93", "Roboto", "Helvetica Neue";
 $base-font-size:   16px;
 $bigger-font-size: 18px;
+$bigger-font-size-l: 21px;
 $brand-font-size: 16rem;
 $brand-line-height: $brand-font-size * 0.8;
 $sub-brand-font-size: 4rem;
@@ -116,6 +117,12 @@ label {
   font-family: $liberi-font;
 }
 
+p {
+  &.text-big {
+    font-size: $bigger-font-size-l;
+  }
+}
+
 nav {
   background-color: $nav-color;
   padding: .2em;
@@ -132,9 +139,12 @@ nav {
     padding-right: .5rem;
   }
 
-  .pure-button-primary {
-    color: $primary-color;
-    background-color: $white-color;
+  a,
+  a:visited {
+    &.pure-button-primary {
+      color: $primary-color;
+      background-color: $white-color;
+    }
   }
 
   .pure-menu-list {
@@ -173,22 +183,21 @@ nav {
   }
 
   &.sidenav {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 3;
-      top: 0;
-      left: 0;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding: 0;
-      text-align:center;
-      justify-content: center;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding: 0;
+    text-align:center;
+    justify-content: center;
 
-      .pure-menu-item {
-        margin: 0.5rem 0;
-      }
-
+    .pure-menu-item {
+      margin: 0.5rem 0;
+    }
   }
 }
 
@@ -196,13 +205,36 @@ a,
 a:visited {
   color: $primary-color;
   text-decoration: none;
+  &.pure-button-primary {
+    color: $white-color;
+    background-color: $text-primary-color;
+  }
 }
 
-a:hover,
-a:focus {
-  color: $primary-color-light;
-  transition: color .7s;
+.pure-button-primary {
+  color: $white-color;
+  padding: 0.5em 2em;
+  border-radius: $base-radius;
 }
+
+.product {
+  .pure-button {
+    margin-bottom: 0.5rem;
+  }
+
+  .product-head {
+    font-weight: $base-font-weight;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+
+  .product-description > p:first-child {
+    margin-top: 0 !important;
+  }
+}
+
 
 .site-img {
     border-radius: $base-radius;
@@ -224,7 +256,7 @@ a:focus {
 .subpage {
   max-width: $content-width;
   margin: 1rem auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .l-box {
@@ -237,6 +269,14 @@ a:focus {
 
 .h-center {
   text-align: center;
+}
+
+.h-left {
+  text-align: left;
+}
+
+.h-right {
+  text-align: right;
 }
 
 .v-center {
@@ -264,12 +304,6 @@ a:focus {
   }
 }
 
-.pure-button {
-  background-color: $primary-color;
-  color: $white-color;
-  padding: 0.5em 2em;
-  border-radius: $base-radius;
-}
 
 .pure-menu-fixed {
   z-index: 5;
@@ -354,12 +388,14 @@ a:focus {
 
 .content {
   padding: 1em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .content-head {
   font-weight: $base-font-weight;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   margin-bottom: 1rem;
 }
 
@@ -388,6 +424,39 @@ a:focus {
   }
 }
 
+.hover-card {
+  position: relative;
+
+  .hover-card-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .hover-card-text {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  &:hover {
+    .hover-card-image {
+      opacity: 0.3;
+    }
+
+    .hover-card-text {
+      opacity: 1;
+    }
+  }
+}
 
 
 .news-post {
@@ -487,5 +556,10 @@ a:focus {
 @media only screen and (max-width : $on-cellphone) {
   .content {
     padding: 0;
+  }
+
+  .h-right,
+  .h-left {
+    text-align: left;
   }
 }
