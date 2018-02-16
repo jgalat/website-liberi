@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Liberi
-description: > # no desc
+description: "Liberi es una marca que apuesta por alternativas prácticas, higiénicas y eco-amigables en la higiene femenina. Bajo el lema Libertad sin Tabúes, vemos en nuestros productos una oportunidad de apertura mental a las prácticas convencionales con un mayor poder y autonomía."
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://liberi.cafar.com.ar" # the base hostname & protocol for your site
 
